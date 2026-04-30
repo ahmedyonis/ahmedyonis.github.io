@@ -1,0 +1,35 @@
+body {
+    background: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+/* الكتاب */
+#book {
+    width: 400px;
+    height: 500px;
+}
+
+/* الصفحات العادية */
+.page {
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* الغلاف */
+.cover {
+    background: linear-gradient(135deg, #4a2c2a, #2b1a19);
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border: none;
+
+    /* أهم حاجة */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}

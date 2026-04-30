@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="book">
+    
+        <!-- الغلاف الأمامي -->
+        <div class="page cover">Front Cover</div>
+        <div class="page cover">Back back</div>
+    
+        <!-- صفحات عادية -->
+        <div class="page">Page 1</div>
+        <div class="page">Page 2</div>
+        <div class="page">Page 3</div>
+        <div class="page">Page 4</div>
+    
+        <!-- الغلاف الخلفي -->
+        <div class="page cover">Back Cover</div>
+    
+    </div>
+    
+    
+    <script src="page-flip.browser.js"></script>
+    <script>
+    const pageFlip = new St.PageFlip(
+        document.getElementById("book"),
+        {
+            width: 400,
+            height: 500,
+            size: "fixed",
+            showCover: true, // دي اللي بتفرق الغلاف
+            maxShadowOpacity: 0.5,
+            mobileScrollSupport: true
+        }
+    );
+
+    pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+
+    document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                pageFlip.flipNext();
+            }
+
+            if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                pageFlip.flipPrev();
+            }
+        });
+
+    const book = document.getElementById("book");
+
+        book.addEventListener("wheel", (e) => {
+            e.preventDefault();
+
+            if (e.deltaY > 0) {
+                pageFlip.flipNext();
+            } else {
+                pageFlip.flipPrev();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
