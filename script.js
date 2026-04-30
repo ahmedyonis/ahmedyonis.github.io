@@ -22,6 +22,8 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+let isScrolling = false;
+
 const book = document.getElementById("book");
 
 book.addEventListener("wheel", (e) => {
@@ -32,6 +34,8 @@ book.addEventListener("wheel", (e) => {
     } else {
         pageFlip.flipPrev();
     }
+
+    isScrolling = true;
 
     setTimeout(() => {
     isScrolling = false;}, 1000);
