@@ -4,7 +4,7 @@ const pageFlip = new St.PageFlip(
         width: 400,
         height: 500,
         size: "fixed",
-        showCover: true, // دي اللي بتفرق الغلاف
+        showCover: true,
         maxShadowOpacity: 0.5,
         mobileScrollSupport: true
     }
@@ -25,6 +25,7 @@ document.addEventListener("keydown", (e) => {
 let isScrolling = false;
 
 const book = document.getElementById("book");
+const navButtons = document.querySelectorAll(".nav-button");
 
 book.addEventListener("wheel", (e) => {
     e.preventDefault();
@@ -38,6 +39,14 @@ book.addEventListener("wheel", (e) => {
     isScrolling = true;
 
     setTimeout(() => {
-    isScrolling = false;}, 1000);
+        isScrolling = false;
+    }, 1000);
 
 }, { passive: false });
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const targetPage = Number(button.dataset.page);
+        pageFlip.turnToPage(targetPage);
+    });
+});

@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Portfolio Book</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="book">
-    
-        <!-- الغلاف الأمامي -->
-        <div class="page cover">Front Cover</div>
-        <div class="page cover">Back back</div>
-    
-        <!-- صفحات عادية -->
-        <div class="page">Page 1</div>
-        <div class="page">Page 2</div>
-        <div class="page">Page 3</div>
-        <div class="page">Page 4</div>
-    
-        <!-- الغلاف الخلفي -->
-        <div class="page cover">Back Cover</div>
-    
-    </div>
-    
-    
+    <header class="site-header">
+        <div class="brand">Portfolio Book</div>
+        <nav class="header-nav" aria-label="Book navigation">
+            <button class="nav-button" type="button" data-page="0">Cover</button>
+            <button class="nav-button" type="button" data-page="2">About</button>
+            <button class="nav-button" type="button" data-page="3">Projects</button>
+            <button class="nav-button" type="button" data-page="4">Services</button>
+            <button class="nav-button" type="button" data-page="6">Contact</button>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <div id="book">
+            <div class="page cover">Portfolio Book</div>
+            <div class="page cover">Welcome</div>
+
+            <div class="page">About Me</div>
+            <div class="page">Projects</div>
+            <div class="page">Services</div>
+            <div class="page">Experience</div>
+
+            <div class="page cover">Contact</div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Copyright © 2026 Portfolio Book. All rights reserved.</p>
+    </footer>
+
     <script src="page-flip.browser.js"></script>
     <script src="script.js"></script>
 </body>

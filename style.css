@@ -1,18 +1,68 @@
 body {
     background: #2c2c2c;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
+    margin: 0;
+    min-height: 100vh;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-/* الكتاب */
+.site-header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 24px;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.header-nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    border: 1px solid #c9a66b;
+    background: transparent;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: #c9a66b;
+    color: #1c1c1c;
+    transform: translateY(-1px);
+}
+
+.page-shell {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+}
+
 #book {
     width: 400px;
     height: 500px;
 }
 
-/* الصفحات العادية */
 .page {
     background: #fff;
     border: 1px solid #ddd;
@@ -20,16 +70,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
-/* الغلاف */
 .cover {
     background: linear-gradient(135deg, #4a2c2a, #2b1a19);
     color: white;
     font-weight: bold;
     font-size: 28px;
     border: none;
-
-    /* أهم حاجة */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.site-footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 24px;
+    text-align: center;
+    background: #1c1c1c;
+    color: #d2d2d2;
+    font-size: 14px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #book {
+        width: 320px;
+        height: 440px;
+    }
+
+    .page {
+        font-size: 18px;
+    }
 }
