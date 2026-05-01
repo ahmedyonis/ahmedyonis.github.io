@@ -1,8 +1,12 @@
+const XY = document.querySelector("#book");
+
 const pageFlip = new St.PageFlip(
     document.getElementById("book"),
     {
-        width: 400,
-        height: 500,
+        // width: 400,
+        // height: 500,
+        width: XY.clientWidth,
+        height: XY.clientHeight,
         size: "fixed",
         showCover: true,
         maxShadowOpacity: 0.5,
@@ -47,6 +51,6 @@ book.addEventListener("wheel", (e) => {
 navButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const targetPage = Number(button.dataset.page);
-        pageFlip.turnToPage(targetPage);
+        pageFlip.flip(targetPage);
     });
 });
