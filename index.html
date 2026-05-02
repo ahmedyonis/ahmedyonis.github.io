@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Book</title>
+    <title>Ahmed Mohamed Yonis Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./img/computer-solid.png" type="image/png">
 </head>
 <body>
     <header class="site-header">
-        <div class="brand">Portfolio Book</div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-code"></i>
+            <div class="brand">Ahmed Yonis</div>
+        </div>
         <nav class="header-nav" aria-label="Book navigation">
             <button class="nav-button" type="button" data-page="0">Cover</button>
             <button class="nav-button" type="button" data-page="2">About</button>
@@ -20,7 +27,16 @@
 
     <main class="page-shell">
         <div id="book">
-            <div class="page cover">Portfolio Book</div>
+            <div class="page cover page-cover">
+                <div class="cover-profile">
+                    <img src="./img/ahmed.png" alt="Ahmed Mohamed Yonis" class="cover-photo">
+                    <h1>Ahmed Mohamed Yonis</h1>
+                    <p>Full Stack Web Developer</p>
+                    <div id="text-container">
+                        <span id="text"></span><span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
             <div class="page cover">Welcome</div>
 
             <div class="page">About Me</div>
@@ -28,12 +44,12 @@
             <div class="page">Services</div>
             <div class="page">Experience</div>
 
-            <div class="page cover">Contact</div>
+            <div class="page cover page-cover">Contact</div>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>Copyright © 2026 Portfolio Book. All rights reserved.</p>
+        <p>Copyright © 2026 A7hmed Yonis. All rights reserved.</p>
     </footer>
 
     <script src="page-flip.browser.js"></script>
