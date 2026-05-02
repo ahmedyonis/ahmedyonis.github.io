@@ -36,6 +36,7 @@ body {
 .nav-button {
     border: 1px solid #c9a66b;
     background: transparent;
+    background: #333;
     color: #fff;
     padding: 10px 16px;
     border-radius: 999px;
@@ -86,6 +87,7 @@ body {
 
 .page-cover {
     text-align: center;
+    align-content: center;
     padding: 28px;
     box-sizing: border-box;
 }
@@ -126,6 +128,22 @@ body {
     letter-spacing: 0.08em;
 }
 
+.contact-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-transform: none;
+}
+
+.contact-page h2 {
+    margin: 0;
+    font-size: clamp(24px, 4vw, 34px);
+    letter-spacing: 0.08em;
+    color: #f4e6c7;
+}
+
 .site-footer {
     width: 100%;
     box-sizing: border-box;
@@ -137,7 +155,61 @@ body {
 }
 
 .site-footer p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.social-vertical {
+  width: min(100%, 320px);
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 0;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 40px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #c9a66b;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-vertical a {
+  width: 100%;
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+.social a i {
+  font-size: 24px;
+}
+
+.social a span {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.social a:hover {
+  background: #c9a66b;
+  transform: translateY(-2px);
 }
 
 #text{
@@ -175,6 +247,17 @@ body {
         text-align: center;
     }
 
+    .header-nav {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .nav-button{
+        width: 65px;
+        font-size: 10px;
+        justify-content: center;
+    }
+
     #book {
         width: 320px;
         height: 440px;
@@ -190,5 +273,36 @@ body {
 
     .cover-photo {
         width: min(62%, 170px);
+    }
+
+    .social a {
+        min-width: 125px;
+        padding: 10px 14px;
+    }
+
+    .social-vertical {
+        width: 60%;
+    }
+
+    .site-footer .social {
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .site-footer .social a {
+        min-width: 0;
+        flex: 1 1 0;
+        padding: 8px 4px;
+        gap: 4px;
+        border-radius: 16px;
+    }
+
+    .site-footer .social a i {
+        font-size: 16px;
+    }
+
+    .site-footer .social a span {
+        font-size: 10px;
+        letter-spacing: 0;
     }
 }
