@@ -64,9 +64,11 @@ body {
 }
 
 #book {
-    width: min(46vw, 520px);
+    /* width: min(46vw, 520px);
     height: min(72vh, 680px);
-    min-height: 520px; 
+    min-height: 520px;  */
+    width: calc(100vw - 60vw);
+    height: calc(100vh - 20vh);
 
 }
 
@@ -249,7 +251,7 @@ body {
 
 .about-content {
     width: 100%;
-    max-width: 620px;
+    /* max-width: 620px; */
     height: 100%;
     min-height: 0;
     display: flex;
