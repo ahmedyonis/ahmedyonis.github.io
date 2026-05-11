@@ -16,6 +16,16 @@ const pageFlip = new St.PageFlip(
 
 pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 
+let resizeTimer;
+
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+        pageFlip.update();
+    }, 150);
+});
+
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         pageFlip.flipNext();
