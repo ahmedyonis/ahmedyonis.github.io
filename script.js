@@ -1,4 +1,18 @@
 const XY = document.querySelector("#book");
+const themeToggle = document.getElementById("theme-toggle");
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    themeToggle.checked = true;
+}
+
+themeToggle.addEventListener("change", () => {
+    const isLightTheme = themeToggle.checked;
+
+    document.body.classList.toggle("light-theme", isLightTheme);
+    localStorage.setItem("portfolio-theme", isLightTheme ? "light" : "dark");
+});
 
 const pageFlip = new St.PageFlip(
     document.getElementById("book"),
@@ -15,6 +29,16 @@ const pageFlip = new St.PageFlip(
 );
 
 pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+
+let resizeTimer;
+
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+        pageFlip.update();
+    }, 150);
+});
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
