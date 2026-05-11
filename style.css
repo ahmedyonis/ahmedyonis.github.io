@@ -11,6 +11,93 @@ body {
     font-family: Arial, sans-serif;
 }
 
+body,
+.site-header,
+.site-footer,
+.nav-button,
+.social a,
+.cover,
+.about,
+.about-content,
+.about-label,
+.about-highlights span,
+.skill-chip,
+.project-card,
+.project-links a,
+.contact-page h2,
+#text {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-theme {
+    background: #f1eee8;
+    color: #241c1a;
+}
+
+body.light-theme .site-header,
+body.light-theme .site-footer {
+    background: #fff8ec;
+    color: #2b211f;
+    box-shadow: 0 0.4rem 1.2rem rgba(74, 44, 42, 0.12);
+}
+
+body.light-theme .nav-button,
+body.light-theme .social a {
+    background: #fff;
+    color: #4a2c2a;
+    border-color: #b8864f;
+}
+
+body.light-theme .nav-button:hover,
+body.light-theme .social a:hover,
+body.light-theme .project-links a:hover {
+    background: #b8864f;
+    color: #fff8ec;
+}
+
+body.light-theme .cover {
+    background: linear-gradient(135deg, #f8e8c2, #c9a66b);
+    color: #241c1a;
+    box-shadow: 0 0 20px rgba(74, 44, 42, 0.22);
+}
+
+body.light-theme .cover-profile p,
+body.light-theme #text {
+    color: #7a3d2f;
+}
+
+body.light-theme .about {
+    background: linear-gradient(160deg, #fffaf0 0%, #f0dfba 100%);
+    color: #231817;
+}
+
+body.light-theme .about-content {
+    background: rgba(255, 255, 255, 0.68);
+    border-color: rgba(122, 61, 47, 0.2);
+}
+
+body.light-theme .about-label,
+body.light-theme .project-links a {
+    background: #7a3d2f;
+    color: #fff8ec;
+}
+
+body.light-theme .about-highlights span,
+body.light-theme .skill-chip,
+body.light-theme .project-card {
+    background: #fffef9;
+    color: #4a2c2a;
+}
+
+body.light-theme .project-card h3 {
+    color: #7a3d2f;
+}
+
+body.light-theme .project-card p,
+body.light-theme .about-content p {
+    color: #4d3b35;
+}
+
 .site-header {
     width: 100%;
     box-sizing: border-box;
