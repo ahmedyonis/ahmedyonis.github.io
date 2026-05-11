@@ -22,10 +22,18 @@ body {
     font-size: 2rem;
 }
 
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.45rem, 1vw, 0.75rem);
+    min-width: 0;
+}
+
 .brand {
     /* font-size: 24px; */
     font-weight: 700;
     letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
 .header-nav {
@@ -77,8 +85,9 @@ body {
 /* From Uiverse.io by Madflows */
 .toggle-switch {
     position: relative;
-    width: 100px;
-    height: 50px;
+    flex: 0 0 auto;
+    width: clamp(3.75rem, 6.5vw, 6.25rem);
+    height: clamp(1.875rem, 3.3vw, 3.125rem);
     --light: #d8dbe0;
     --dark: #28292c;
     --link: rgb(27, 129, 112);
@@ -87,12 +96,14 @@ body {
 
 .switch-label {
     position: absolute;
+    inset: 0;
     width: 100%;
-    height: 50px;
+    height: 100%;
+    box-sizing: border-box;
     background-color: var(--dark);
-    border-radius: 25px;
+    border-radius: 999px;
     cursor: pointer;
-    border: 3px solid var(--dark);
+    border: clamp(0.12rem, 0.25vw, 0.19rem) solid var(--dark);
 }
 
 .checkbox {
@@ -104,7 +115,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 999px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
@@ -116,22 +127,25 @@ body {
 .slider::before {
     content: "";
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 25px;
-    height: 25px;
+    top: 50%;
+    left: 10%;
+    width: 25%;
+    aspect-ratio: 1;
     border-radius: 50%;
-    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-    box-shadow: inset 12px -4px 0px 0px var(--light);
+    -webkit-box-shadow: inset 0.75rem -0.25rem 0 0 var(--light);
+    box-shadow: inset 0.75rem -0.25rem 0 0 var(--light);
     background-color: var(--dark);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
 
 .checkbox:checked~.slider::before {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
+    -webkit-transform: translate(210%, -50%);
+    -ms-transform: translate(210%, -50%);
+    transform: translate(210%, -50%);
     background-color: var(--dark);
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -547,7 +561,33 @@ body {
 @media (max-width: 680px) {
     .site-header {
         justify-content: center;
-        text-align: center;
+        /* text-align: center; */
+        gap: 12px;
+        padding-inline: 14px;
+    }
+
+    .brand-row {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .brand {
+        font-size: clamp(1.1rem, 6vw, 1.6rem);
+    }
+
+    .toggle-switch {
+        width: clamp(3.25rem, 16vw, 4rem);
+        height: clamp(1.6rem, 8vw, 2rem);
+    }
+
+    .slider::before {
+        -webkit-box-shadow: inset 0.5rem -0.16rem 0 0 var(--light);
+        box-shadow: inset 0.5rem -0.16rem 0 0 var(--light);
+    }
+
+    .header-nav {
+        justify-content: center;
     }
 
     /* .header-nav {
