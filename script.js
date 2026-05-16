@@ -80,11 +80,11 @@ navButtons.forEach((button) => {
 });
 
 
-const names = ["Angular", "Laravel", "MySQL"]; 
+const names = ["Angular", "Laravel", "MySQL"];
 let nameIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let isHovered = false; 
+let isHovered = false;
 
 const textElement = document.getElementById("text");
 const container = document.getElementById("text-container");
@@ -117,7 +117,7 @@ function type() {
 
     else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        nameIndex = (nameIndex + 1) % names.length; 
+        nameIndex = (nameIndex + 1) % names.length;
     }
 
     setTimeout(type, speed);
